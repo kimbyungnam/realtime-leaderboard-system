@@ -1,0 +1,17 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "rls"
+authors = [{name = "byungnam.kim", email = "kimbyungnam@ajou.ac.kr"}]
+readme = "README.md"
+version = "0.0.1"
+description = "Solution for https://roadmap.sh/projects/realtime-leaderboard-system"
+
+[project.optional-dependencies]
+dev = [
+    "commitizen>=4.1.0",
+    "ruff>=0.8.4",
+    "pre-commit>=4.0.1",
+]

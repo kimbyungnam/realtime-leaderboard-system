@@ -1,0 +1,42 @@
+default_install_hook_types:
+- pre-commit
+- commit-msg
+repos:
+- hooks:
+  - id: trailing-whitespace
+    stages:
+    - pre-commit
+  - id: end-of-file-fixer
+    stages:
+    - pre-commit
+  - id: check-yaml
+    stages:
+    - pre-commit
+  - id: check-added-large-files
+    stages:
+    - pre-commit
+  repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.2.0
+- hooks:
+  - id: ruff
+    stages:
+    - pre-commit
+  - args:
+    - --select
+    - I
+    - --fix
+    id: ruff
+    name: Sort imports
+    stages:
+    - pre-commit
+  - id: ruff-format
+    stages:
+    - pre-commit
+  repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.8.4
+- hooks:
+  - id: commitizen
+    stages:
+    - commit-msg
+  repo: https://github.com/commitizen-tools/commitizen
+  rev: v4.1.0
